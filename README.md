@@ -1,6 +1,4 @@
-# ICS_CP_CODECRAFTERS
-
-**OTHELLO ORCHESTRATION:  Unveiling the Reversal Symphony**
+# OTHELLO ORCHESTRATION:  Unveiling the Reversal Symphony
 
 ***Following are the Basic rules which are to be considered while playing the game:***
 
