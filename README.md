@@ -1,90 +1,91 @@
-# OTHELLO ORCHESTRATION:  Unveiling the Reversal Symphony
+# OTHELLO ORCHESTRATION: Unveiling the Reversal Symphony
 
-***Following are the Basic rules which are to be considered while playing the game:***
+## Introduction
+Othello is a strategic board game played on an 8x8 grid. The objective is to have the majority of discs of your color on the board by the end of the game. This document provides an overview of the rules, execution, and environment required to run the game.
 
-**Board Setup:**
+---
 
-The game is played on an 8x8 grid board.
+## Basic Rules
 
-Each player starts with two discs of their color placed diagonally in the center.
+### **Board Setup:**
+- The game is played on an 8x8 grid.
+- Each player starts with two discs of their color placed diagonally at the center.
 
-**Turns:**
+### **Turns:**
+- Players take turns placing one disc of their color on an empty square.
+- A valid move must "sandwich" at least one opponent's disc between two of the player's own discs, in a horizontal, vertical, or diagonal direction.
 
-Players take turns placing one disc of their color on an empty square.A player must place a disc so that it 'sandwiches' at least one opponent's disc between two of their own discs horizontally, vertically, or diagonally.
+### **Flipping Discs:**
+- When a player surrounds the opponent's discs on opposite sides, all enclosed discs flip to the player's color.
 
-**Flipping Discs:**
+### **Passing:**
+- If a player has no legal moves, they must pass, and the opponent continues to play.
 
-When a player surrounds the opponent's discs with their own on opposite sides, all the enclosed discs of the opponent's color are flipped to the current player's color.
+### **End of the Game:**
+- The game ends when the board is full or when neither player can make a legal move.
 
-**Passing:**
+### **Winning:**
+- The player with the most discs of their color on the board at the end of the game wins.
+- In case of a tie (both players have an equal number of discs), the game ends in a draw.
 
-If a player has no legal moves, they must pass, and their opponent continues to play.
+---
 
-**End of the Game:**
+## Execution
 
-The game ends when the board is full or when neither player can make a legal move.
+### **Board Initialization:**
+- The game board is represented as a 2D array (`a[8][8]`), initialized with empty slots (`"_ "`).
+- The starting four discs (two "x " and two "o ") are placed at the center.
 
-The player with the most discs of their color on the board wins.
+### **Menu Display:**
+- The user is presented with a menu with the following options:
 
-**Winning:**
+  1. View Team Members
+  2. View Game Rules
+  3. Play the Game
+  4. Exit
 
-The player with the most discs of their color on the board at the end of the game is the winner.
+### **Menu Option Handling:**
+- If the user selects:
+  - **Option 1:** Displays team members.
+  - **Option 2:** Displays the rules of Othello.
+  - **Option 3:** Starts the game setup.
+  - **Option 4:** Exits the program with a farewell message.
 
-**Tiebreaker:**
+### **Game Setup:**
+- Players enter their names (`p1` and `p2`).
+- The initial board is displayed using the `show()` function.
+- A loop begins for turn-based gameplay.
 
-If both players have the same number of discs of their color, the game is a tie.
+### **Game Turns:**
+- Each turn consists of:
+  - The current player inputting a row and column for their move.
+  - Move validation using `menu_x()` or `menu_o()`.
+  - Updating and displaying the board.
+  - The game continues until a player chooses to exit.
 
-**1) EXECUTION:**
+### **Game Completion:**
+- If a player exits, they can:
+  - Evaluate the winner based on the number of discs.
+  - Exit without evaluation.
 
-***Board Initialization:***
+### **Program Termination:**
+- If the player chooses **Option 4** from the main menu, the program displays a farewell message and exits.
 
-A 2D array (a[8][8]) is created to represent the Othello game board. Each element is initially set to "_ " (underscore followed by a space).
-The starting positions for the four discs (two "x " and two "o ") are set in the center of the board.
+---
 
-***Menu Display:***
+## Environment
+- This game is implemented in C.
+- It can be compiled and executed using any standard C compiler, such as **GCC**, **Visual Studio Code**, or **Code::Blocks**.
 
-A welcome message and a menu are displayed, prompting the user to choose an option.
-Options include viewing team members, rules, playing the game, or exiting.
+---
 
-Enter ***1*** for viewing the Team Members.
+## Acknowledgment
+Thank you for playing Othello! We hope you enjoy the game and refine your strategy over time.
 
-Enter ***2*** for viewing the Rules of the Othello GamE.
+---
 
-Enter ***3*** for playing the Game.
+## Contact
+For any questions or suggestions, feel free to reach out!
 
-Enter ***4*** for Exit.
+**Happy Gaming!** 🎮
 
-***Menu Option Handling:***
-
-If the user chooses to view team members (b == 1) or rules (b == 2), the corresponding information is displayed.
-If the user chooses to play the game (b == 3), the game setup begins.
-
-***Game Setup:***
-
-Player names (p1 and p2) are obtained from the user.
-The initial game board is displayed using the show function.
-A loop is initiated for the game turns.
-
-***Game Turns:***
-
-Players take turns to make a move. For each turn:
-The current player is prompted to input the row and column for their move.
-The move is validated using the menu_x or menu_o function, updating the game board accordingly.
-The game board is displayed after each move using the show function.
-The loop continues until the user decides to exit the game.
-
-***Game Completion:***
-
-If the user chooses to exit the game, they may also choose to evaluate the winner or exit without evaluation.
-If the user chooses to evaluate the winner, the program calculates and displays the winner based on the number of "x " and "o " discs.
-If the user chooses not to evaluate, the program breaks out of the loop and ends.
-
-***Program Termination:***
-
-If the user chooses to exit the program from the main menu (b == 4), a goodbye message is displayed, and the program terminates.
-
-**2) ENVIRONMENT**
-
-THIS CODE CAN BE USED IN ANY C COMPILER LIKE VISUAL CODE.
-
-  ***THANK YOU FOR READING !***
