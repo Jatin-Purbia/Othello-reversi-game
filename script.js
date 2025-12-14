@@ -100,6 +100,9 @@ function handleCellClick(row, col) {
         if (isBoardFull()) {
             endGame();
         }
+    } else {
+        // Invalid move - show cross animation
+        showInvalidMoveAnimation(row, col);
     }
 }
 
@@ -184,6 +187,17 @@ function animateFlip(row, col) {
                 disc.classList.remove('flipping');
             }, 600);
         }
+    }
+}
+
+// Show invalid move animation
+function showInvalidMoveAnimation(row, col) {
+    const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+    if (cell) {
+        cell.classList.add('invalid-move');
+        setTimeout(() => {
+            cell.classList.remove('invalid-move');
+        }, 800);
     }
 }
 
