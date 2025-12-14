@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello - Reversi Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-box">
+                <h1 class="title">🎮 OTHELLO ORCHESTRATION</h1>
+                <p class="subtitle">Unveiling the Reversal Symphony</p>
+                
+                <div class="menu-buttons">
+                    <button class="menu-btn" onclick="showSection('creator')">
+                        <span class="btn-icon">👤</span>
+                        Game Creator
+                    </button>
+                    <button class="menu-btn" onclick="showSection('rules')">
+                        <span class="btn-icon">📜</span>
+                        Game Rules
+                    </button>
+                    <button class="menu-btn" onclick="showSection('setup')">
+                        <span class="btn-icon">🎯</span>
+                        Play Game
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creator Info Screen -->
+        <div id="creatorScreen" class="screen">
+            <div class="info-box">
+                <h2>About the Creator</h2>
+                <div class="creator-info">
+                    <p>👋 Hi Guys!</p>
+                    <p>My Name is <strong>Jatin Purbia</strong></p>
+                    <p>I'm a BTECH 1st year Student at IIT-Jodhpur</p>
+                </div>
+                <button class="back-btn" onclick="goBack()">← Back to Menu</button>
+            </div>
+        </div>
+
+        <!-- Rules Screen -->
+        <div id="rulesScreen" class="screen">
+            <div class="info-box rules-box">
+                <h2>Game Rules</h2>
+                <div class="rules-content">
+                    <div class="rule-section">
+                        <h3>🎲 Board Setup</h3>
+                        <p>The game is played on an 8x8 grid board. Each player starts with two discs of their color placed diagonally in the center.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h3>🔄 Turns</h3>
+                        <p>Players take turns placing one disc of their color on an empty square. A player must place a disc so that it 'sandwiches' at least one opponent's disc between two of their own discs horizontally, vertically, or diagonally.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h3>🔃 Flipping Discs</h3>
+                        <p>When a player surrounds the opponent's discs with their own on opposite sides, all the enclosed discs are flipped to the current player's color.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h3>⏭️ Passing</h3>
+                        <p>If a player has no legal moves, they must pass, and their opponent continues to play.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h3>🏁 End of the Game</h3>
+                        <p>The game ends when the board is full or when neither player can make a legal move. The player with the most discs of their color on the board wins.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h3>🏆 Winning</h3>
+                        <p>The player with the most discs of their color at the end of the game is the winner. If both players have the same number of discs, the game is a tie.</p>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="goBack()">← Back to Menu</button>
+            </div>
+        </div>
+
+        <!-- Player Setup Screen -->
+        <div id="setupScreen" class="screen">
+            <div class="setup-box">
+                <h2>Player Setup</h2>
+                <div class="setup-form">
+                    <div class="player-input">
+                        <label for="player1">
+                            <span class="player-disc black">⚫</span>
+                            Player 1 (Black)
+                        </label>
+                        <input type="text" id="player1" placeholder="Enter Player 1 name" maxlength="15" required>
+                    </div>
+                    
+                    <div class="player-input">
+                        <label for="player2">
+                            <span class="player-disc white">⚪</span>
+                            Player 2 (White)
+                        </label>
+                        <input type="text" id="player2" placeholder="Enter Player 2 name" maxlength="15" required>
+                    </div>
+                    
+                    <button class="start-btn" onclick="startGame()">Start Game →</button>
+                    <button class="back-btn" onclick="goBack()">← Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-container">
+                <div class="game-header">
+                    <h2>Othello Game</h2>
+                    <div class="player-info">
+                        <div class="player-card" id="player1Card">
+                            <span class="player-disc black">⚫</span>
+                            <div class="player-details">
+                                <span class="player-name" id="player1Name">Player 1</span>
+                                <span class="player-score" id="player1Score">2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="turn-indicator" id="turnIndicator">
+                            <span id="currentTurn">Player 1's Turn</span>
+                        </div>
+                        
+                        <div class="player-card" id="player2Card">
+                            <span class="player-disc white">⚪</span>
+                            <div class="player-details">
+                                <span class="player-name" id="player2Name">Player 2</span>
+                                <span class="player-score" id="player2Score">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-wrapper">
+                    <div class="board" id="gameBoard"></div>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="control-btn pass-btn" onclick="passMove()" id="passBtn">Pass Move</button>
+                    <button class="control-btn restart-btn" onclick="restartGame()">New Game</button>
+                    <button class="control-btn exit-btn" onclick="exitGame()">Exit to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 Game Over! 🎉</h2>
+                <div id="winnerMessage"></div>
+                <div class="final-scores">
+                    <div class="final-score">
+                        <span class="player-disc black">⚫</span>
+                        <span id="finalPlayer1Name">Player 1</span>
+                        <span id="finalPlayer1Score">0</span>
+                    </div>
+                    <div class="final-score">
+                        <span class="player-disc white">⚪</span>
+                        <span id="finalPlayer2Name">Player 2</span>
+                        <span id="finalPlayer2Score">0</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-btn" onclick="restartGame()">Play Again</button>
+                    <button class="modal-btn" onclick="exitGame()">Exit to Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
-# OTHELLO ORCHESTRATION: Unveiling the Reversal Symphony
+# Othello - Reversi Game 🎮
 
 ## Introduction
-Othello is a strategic board game played on an 8x8 grid. The objective is to have the majority of discs of your color on the board by the end of the game. This document provides an overview of the rules, execution, and environment required to run the game.
+A beautiful, modern web-based implementation of the classic Othello (Reversi) board game with an intuitive user interface. Othello is a strategic board game played on an 8x8 grid where the objective is to have the majority of discs of your color on the board by the end of the game.
 
 ---
 
@@ -48,44 +48,96 @@ Othello is a strategic board game played on an 8x8 grid. The objective is to hav
 - If the user selects:
   - **Option 1:** Displays team members.
   - **Option 2:** Displays the rules of Othello.
-  - **Option 3:** Starts the game setup.
-  - **Option 4:** Exits the program with a farewell message.
-
-### **Game Setup:**
-- Players enter their names (`p1` and `p2`).
-- The initial board is displayed using the `show()` function.
-- A loop begins for turn-based gameplay.
-
-### **Game Turns:**
-- Each turn consists of:
-  - The current player inputting a row and column for their move.
-  - Move validation using `menu_x()` or `menu_o()`.
-  - Updating and displaying the board.
-  - The game continues until a player chooses to exit.
-
-### **Game Completion:**
-- If a player exits, they can:
-  - Evaluate the winner based on the number of discs.
-  - Exit without evaluation.
-
-### **Program Termination:**
-- If the player chooses **Option 4** from the main menu, the program displays a farewell message and exits.
+  - **Option 3:** Starts the game setup and play.
 
 ---
 
-## Environment
-- This game is implemented in C.
-- It can be compiled and executed using any standard C compiler, such as **GCC**, **Visual Studio Code**, or **Code::Blocks**.
+## 🚀 How to Run the Web Version
+
+### Option 1: Open Directly
+Simply double-click the `index.html` file in your file explorer. It will open in your default web browser.
+
+### Option 2: Using a Local Server (Recommended)
+For the best experience, use a local web server:
+
+#### Using Python:
+```bash
+# Python 3
+python -m http.server 8000
+# Then open: http://localhost:8000
+```
+
+#### Using VS Code Live Server:
+1. Install the "Live Server" extension in VS Code
+2. Right-click on `index.html`
+3. Select "Open with Live Server"
 
 ---
 
-## Acknowledgment
-Thank you for playing Othello! We hope you enjoy the game and refine your strategy over time.
+## 🎯 How to Play the Web Version
+
+### Setup
+1. Click "Play Game" from the main menu
+2. Enter names for both players
+3. Click "Start Game"
+
+### Gameplay
+- **Player 1 (Black ⚫)** always goes first
+- Click on any highlighted green cell to place your disc
+- Valid moves will flip opponent's discs between your pieces
+- The game automatically switches turns
+- If you have no valid moves, the game will pass your turn
+- The game ends when the board is full or neither player can move
+
+### Features
+- ✨ Smooth animations for disc placement and flipping
+- 📱 Responsive design for all devices
+- 🎨 Beautiful modern UI with gradient colors
+- 🔄 Real-time score tracking
+- ✅ Visual indicators for valid moves
+- 🏆 Automatic winner determination
 
 ---
 
-## Contact
-For any questions or suggestions, feel free to reach out!
+## 📁 File Structure
+```
+Othello-reversi-game/
+├── index.html      # Main HTML structure
+├── style.css       # All styling and animations
+├── script.js       # Game logic and interactivity
+├── game_code.cpp   # Original C++ implementation (fixed)
+└── README.md       # This file
+```
 
-**Happy Gaming!** 🎮
+---
+
+## 🛠️ Technologies Used
+- **HTML5**: Semantic structure
+- **CSS3**: Modern styling with gradients, animations, and responsive design
+- **JavaScript (ES6+)**: Game logic, DOM manipulation, and event handling
+
+---
+
+## 🐛 Bug Fixes Applied
+### C++ Version:
+- Fixed memory access after free in the final winner evaluation
+- The C++ code now properly manages memory allocation and deallocation
+
+---
+
+## 👨‍💻 Creator
+**Jatin Purbia**  
+BTECH 1st Year Student at IIT-Jodhpur
+
+---
+
+## 📝 Browser Compatibility
+- Chrome/Edge (recommended)
+- Firefox
+- Safari
+- Opera
+
+---
+
+**Thank you for playing Othello! Enjoy the game! 🎉**
 

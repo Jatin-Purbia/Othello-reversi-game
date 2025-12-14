@@ -677,27 +677,6 @@ int main() {
                     free(a[r_idx][c_idx]);
                 }
             }
-
-            // Final winner evaluation if the loop finishes without early exit
-            count_x = 0;
-            count_y = 0;
-            for (int r_idx = 0; r_idx < 8; r_idx++) {
-                for (int c_idx = 0; c_idx < 8; c_idx++) {
-                    if (strcmp(a[r_idx][c_idx], "x ") == 0) {
-                        count_x++;
-                    } else if (strcmp(a[r_idx][c_idx], "o ") == 0) {
-                        count_y++;
-                    }
-                }
-            }
-
-            if (count_x > count_y) {
-                printf("CONGRATULATIONS...Winner is %s !!!\n\n", p1);
-            } else if (count_y > count_x) {
-                printf("CONGRATULATIONS...Winner is %s !!!\n\n", p2);
-            } else {
-                printf("OH IT'S A TIE\n\n");
-            }
         } else if (b == 4) {
             printf("\nTHANK YOU For Playing\nHave A Nice Day!!\n");
             break;
