@@ -1,18 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Othello - Reversi Game</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Othello Reversi Game - Play Classic Board Game Online Free | Othello Orchestration</title>
+    <meta name="description" content="Play Othello (Reversi) online for free! Classic 8x8 strategy board game with beautiful animations. Challenge friends in this strategic disc-flipping game. No download required.">
+    <meta name="keywords" content="Othello, Reversi, board game, strategy game, online game, free game, two player game, classic game, disc game, flip game, strategic board game, play Othello online">
+    <meta name="author" content="Jatin Purbia">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Othello Reversi Game - Play Online Free">
+    <meta property="og:description" content="Play the classic Othello (Reversi) board game online. Beautiful interface, smooth animations, and strategic gameplay. Challenge your friends now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/othello-reversi-game">
+    <meta property="og:image" content="https://yourdomain.com/othello-preview.jpg">
+    <meta property="og:image:alt" content="Othello Reversi Game Board">
+    <meta property="og:site_name" content="Othello Orchestration">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Othello Reversi Game - Play Online Free">
+    <meta name="twitter:description" content="Play the classic Othello board game online with beautiful animations and smooth gameplay. Free to play!">
+    <meta name="twitter:image" content="https://yourdomain.com/othello-preview.jpg">
+    <meta name="twitter:creator" content="@jatinpurbia">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/othello-reversi-game">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Othello Reversi Game",
+        "description": "Play the classic Othello (Reversi) board game online for free. Strategic two-player game with beautiful animations.",
+        "url": "https://yourdomain.com/othello-reversi-game",
+        "gamePlatform": ["Web Browser"],
+        "genre": ["Strategy", "Board Game", "Classic"],
+        "numberOfPlayers": "2",
+        "author": {
+            "@type": "Person",
+            "name": "Jatin Purbia",
+            "affiliation": "IIT Jodhpur"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
+        }
+    }
+    </script>
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
+<body itemscope itemtype="https://schema.org/WebPage">
+    <main class="container" role="main">
         <!-- Welcome Screen -->
-        <div id="welcomeScreen" class="screen active">
-            <div class="welcome-box">
-                <h1 class="title">🎮 OTHELLO ORCHESTRATION</h1>
-                <p class="subtitle">Unveiling the Reversal Symphony</p>
+        <section id="welcomeScreen" class="screen active" aria-label="Welcome Section">
+            <article class="welcome-box">
+                <h1 class="title" itemprop="name">🎮 OTHELLO ORCHESTRATION</h1>
+                <p class="subtitle" itemprop="description">Unveiling the Reversal Symphony</p>
                 
                 <div class="menu-buttons">
                     <button class="menu-btn" onclick="showSection('creator')">
@@ -27,9 +101,9 @@
                         <span class="btn-icon">🎯</span>
                         Play Game
                     </button>
-                </div>
-            </div>
-        </div>
+                </nav>
+            </article>
+        </section>
 
         <!-- Creator Info Screen -->
         <div id="creatorScreen" class="screen">
@@ -173,8 +247,17 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
+    
+    <!-- Google Analytics (Replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Specific pages
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow unnecessary files
+Disallow: /game_code.cpp
+Disallow: /*.md$
